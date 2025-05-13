@@ -53,6 +53,7 @@ This project is a comprehensive digital health platform for a radiology departme
 ---
 
 ## 📁 Folder Structure
+```
 Final Project/
 ├── app.py                   # Main Flask application
 ├── static/                  # Static files (CSS, JS, images)
@@ -71,7 +72,7 @@ Final Project/
 │   ├── Founders.html        # Founders information page
 │   ├── loginPA.html         # Patient login page
 │   └── registerPA.html      # Patient registration page
-
+```
 
 ---
 
