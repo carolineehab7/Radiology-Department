@@ -116,3 +116,24 @@ For any inquiries or feedback, refer to the contact section on the website.
 | Habiba Mamdouh     | 
 | Khadija Elfeky     | 
 | Mohamed Abdelrazik | 
+
+## Screenshots
+### Homepage
+![image](https://github.com/user-attachments/assets/d60f9cca-0953-45d3-aafd-dd2cd7e11626)
+![image](https://github.com/user-attachments/assets/e3c65a19-eaef-490c-9511-6438d4109446)
+
+### MRI 
+![image](https://github.com/user-attachments/assets/fc6b5180-1efa-40e9-80f0-04c65a2fbbaa)
+
+### Meet Our Founders
+![image](https://github.com/user-attachments/assets/e60312b8-7038-4cd9-837a-7968d5e56405)
+
+### Login
+![image](https://github.com/user-attachments/assets/c6fcdefe-cc01-4b47-bd61-097d5425bafa)
+
+### Register
+![image](https://github.com/user-attachments/assets/214f9615-54a0-4f37-ba78-5f7b7646f71a)
+
+
+
+
