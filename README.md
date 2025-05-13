@@ -1,5 +1,3 @@
-![Screenshot 2025-05-13 150157](https://github.com/user-attachments/assets/7e3004ab-ab1c-4e69-bfe1-c4ceee7faf0e)# Radiology-Department
-
 ## Overview
 
 This project is a comprehensive digital health platform for a radiology department, designed to streamline patient registration, and diagnostic imaging services. The system provides access to various radiology services including MRI, CT scans, Ultrasound, and Digital X-rays.
