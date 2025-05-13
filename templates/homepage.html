@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"> <!-- for icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <!-- for bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+  <!-- <link rel="stylesheet" href="{{url_for('static', filename='homepage.css') }}"> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='homepage.css') }}">
+</head>
+
+<body>
+  <header class="container">
+    <p>request appointments</p>
+    <p>online consultation</p>
+    <p>patient results</p>
+    <p>
+      <li class="nav-item dropdown">
+        <button class="btn  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          patient results
+        </button>
+
+      </li>
+    </p>
+    <p>new</p>
+    <p></p>
+    <a href="contact">01117151930</a>
+    <i class="bi bi-telephone-fill"></i>
+    <span><a href="contact us">contact us</a></span>
+  </header>
+
+  <nav>
+    <div>
+      <a href="{{url_for('index')}}"><img src="{{ url_for('static', filename='images/Final Logo.png') }}" alt="Logo"
+          class="logo"></a>
+    </div>
+
+    <div>
+      <input type="checkbox" title="Menu" id="CheckedBtn">
+
+
+      <label for="CheckedBtn">
+        <i class='bx bx-menu' id="BurgerIcon"></i>
+        <i class="bi bi-x" id="closeicon"></i>
+      </label>
+      <ul>
+        <li>
+          <a href="#">Diagnostic Radiology <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="{{ url_for('mri') }}">MRI</a></li>
+            <li><a href="{{ url_for('ct') }}">CT SCAN</a></li>
+            <li><a href="{{ url_for('US') }}">ULTRASOUND</a></li>
+            <li><a href="{{ url_for('x_ray') }}">DIGITAL X-RAY</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Interventional Radiology <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="#">What is Interventional Radiology?</a></li>
+            <li><a href="#">Treated Cases at NOVA RAD</a></li>
+            <li><a href="#">Why Choose NOVA RAD?</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Theranostics <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="#">Introduction to Theranostics</a></li>
+            <li><a href="#">THERANOSTICS in Prostate Cancer</a></li>
+            <li><a href="#">THERANOSTICS in Neuroendocrine Tumors</a></li>
+          </ul>
+        </li>
+        <li><a href="{{url_for('founders')}}">Meet Our Founders</a></li>
+        <li>
+          <a href="{{url_for('login_pa')}}">Log In</a>
+        </li>
+        <li><a href="{{url_for('register_pa')}}">Sign Up </a></li>
+      </ul>
+    </div>
+  </nav>
+  <section>
+    <div class="heightofslide">
+      <div id="carouselExampleRide" class="carousel slide " data-bs-ride="true">
+        <div class="carousel-inner">
+          <div class="carousel-item active ">
+            <div class="backdev">
+              <h1>Welcome to NOVA RAD</h1>
+              <p>We are a leading provider of diagnostic imaging and interventional radiology services, dedicated to
+                delivering high-quality care to our patients.</p>
+              <a href="{{url_for('login_pa')}}">
+                <button>Log In</button>
+              </a>
+
+              <a href="{{url_for('login_pa')}}"><button>Sign Up</button></a>
+            </div>
+            <img src="{{url_for('static', filename='images/totummri-slider.jpg')}}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <div class="backdev">
+              <h1>Welcome to NOVA RAD</h1>
+              <p>We are a leading provider of diagnostic imaging and interventional radiology services, dedicated to
+                delivering high-quality care to our patients.</p>
+              <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for something...">
+                <button id="searchButton">Search</button>
+              </div>
+              <div id="results"></div>
+            </div>
+            <img src="{{url_for('static', filename='images/DSC09243-scaled.jpg')}}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <div class="backdev">
+              <h1>Welcome to NOVA RAD</h1>
+              <p>We are a leading provider of diagnostic imaging and interventional radiology services, dedicated to
+                delivering high-quality care to our patients.</p>
+            </div>
+            <img src="{{url_for('static', filename='images/5B50366-scaled.jpg')}}" class="d-block w-100" alt="...">
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+  </section>
+
+  <h1>Our Services</h1>
+  <section class="services-section">
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="{{url_for('static', filename='images/MRI_HP.jpg')}}" alt="MRI">
+        <a href="{{ url_for('mri') }}">
+          <h3>MRI</h3>
+        </a>
+      </div>
+      <div class="service-card">
+        <img src="{{url_for('static', filename='images/CT_HP.jpg')}}" alt="CT">
+        <a href="{{ url_for('ct') }}">
+          <h3>CT Scan</h3>
+        </a>
+      </div>
+      <div class="service-card">
+        <img src="{{url_for('static', filename='images/US_HP.jpg')}}" alt="ultrasound">
+        <a href="{{ url_for('US') }}">
+          <h3>Ultrasound</h3>
+        </a>
+
+      </div>
+      <div class="service-card">
+        <img src="{{url_for('static', filename='images/x-ray_HP.png')}}" alt="x-ray">
+        <a href="{{ url_for('x_ray') }}">
+          <h3>Digital X-ray</h3>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="working-hours py-5">
+    <div class="container text-center">
+      <h2 class="section-title mb-4">Working Hours</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <ul class="list-group working-hours-list">
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Sunday - Thursday</span>
+              <span>9:00 AM - 11:00 PM</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Friday - Saturday</span>
+              <span>10:00 AM - 5:00 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="success-box">
+      <div class="success-items">
+        <div class="success-item">
+          <h2>LONG HISTORY OF SUCCESS</h2>
+          <p>Since 1989</p>
+        </div>
+        <div class="success-item">
+          <h2>EXPERIENCED DOCTORS</h2>
+          <p>and Staff</p>
+        </div>
+        <div class="success-item">
+          <h2>ADVANCED TECHNOLOGY</h2>
+          <p>and Techniques</p>
+        </div>
+        <div class="success-item">
+          <h2>BEST PATIENT QUALITY</h2>
+          <p>and Care</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--START COPYING FOOTER FROM HERE-->
+  <button id="backToTop" title="Go to top" onclick="topFunction()"> &#11165</button>
+
+  <div class="footer">
+    <!-- <img src="/images/contactus.jpg" alt="contactus" class="full-width-img2" >    -->
+    <h1>RESERVE AN APPOINTMENT OR CONSULT A DOCTOR?</h1>
+    <button class="btn" onclick="location.href='ContactUs.html'">Contact Us</button>
+    <div class="contact-container">
+
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>11 Marghani Street, Heliopolis, Cairo</span>
+      </div>
+
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>HCC, Off 90 St., by MRC Square, New Cairo</span>
+      </div>
+
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>8 Mostafa El-Nahas Street, Nasr City, Cairo</span>
+      </div>
+      <br>
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <a href="tel:19773">19773</a>
+      </div>
+
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:contact@example.com">novarad</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="containerF">
+    <p>© 2023 NovaScan. All rights reserved.</p>
+  </div>
+  <!--STOP HERE-->
+
+
+
+</body>
+<script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{url_for('static', filename='homepage.js')}}"></script>
+
+</html>

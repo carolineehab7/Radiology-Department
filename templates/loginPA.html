@@ -1,0 +1,145 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Patient</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='loginPa.css') }}">
+
+
+</head>
+
+<body>
+
+    <div class="fl">
+        <a href="{{url_for('index')}}" class="aa ">
+            home
+        </a>
+    </div>
+    <div>
+        <p class="nn">Patient</p>
+
+    </div>
+
+
+    <div class="container ck">
+        <div class="row paa">
+            <div class="col-xxl-6 empty  m">
+                <p>Please Login</p>
+
+            </div>
+
+            <div class="col-xxl-6">
+
+                <!-- Login Form -->
+                <form id="form" action="/loginPA" method="post">
+
+                    <h1 class="tt">login</h1>
+
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                    <ul>
+                        {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% endwith %}
+                    <div class="input-control">
+
+                        <label for="email">Email</label>
+                        <input id="email" name="Pemail" type="email" placeholder="Enter your email">
+                        <div class="error"></div>
+                    </div>
+                    <div class="input-control">
+                        <label for="password">Password</label>
+                        <input id="password" name="Ppassword" type="password" placeholder="Enter your password">
+                        <div class="error"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block btn-background-slide"
+                        href="{{url_for('index')}}">Log In</button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+    <p class="text-center pp">Don't have an account? <a href="{{url_for('register_pa')}}">Sign up</a></p>
+
+
+
+    <script>
+        const form = document.getElementById('form');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+
+            if (validateInputs()) {
+                form.submit();
+            }
+        });
+
+        const setError = (element, message) => {
+            const inputControl = element.parentElement;
+            const errorDisplay = inputControl.querySelector('.error');
+
+            errorDisplay.innerText = message;
+            inputControl.classList.add('error');
+            inputControl.classList.remove('success');
+        };
+
+        const setSuccess = element => {
+            const inputControl = element.parentElement;
+            const errorDisplay = inputControl.querySelector('.error');
+
+            errorDisplay.innerText = '';
+            inputControl.classList.add('success');
+            inputControl.classList.remove('error');
+        };
+
+        const isValidEmail = email => {
+            const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        };
+
+        const validateInputs = () => {
+            const emailValue = email.value.trim();
+            const passwordValue = password.value.trim();
+
+            let valid = true;
+
+            if (emailValue === '') {
+                setError(email, 'Email is required');
+                valid = false;
+            } else if (!isValidEmail(emailValue)) {
+                setError(email, 'Provide a valid email address');
+                valid = false;
+            } else {
+                setSuccess(email);
+            }
+
+            if (passwordValue === '') {
+                setError(password, 'Password is required');
+                valid = false;
+            } else if (passwordValue.length < 8) {
+                setError(password, 'Password must be at least 8 characters.');
+                valid = false;
+            } else {
+                setSuccess(password);
+            }
+
+            return valid; // Return true if all inputs are valid
+        };
+    </script>
+</body>
+
+</html>

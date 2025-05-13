@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='registerPA.css') }}">
+
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="patient">
+                <h1 class="text-xxl">
+                    Patient
+                </h1>
+            </div>
+            <div class="mainmenu">
+                <ul>
+                    <li>
+                        <a class="text-lg" href="{{ url_for('index') }}">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-heading text-xxl">
+                    Don't have an account? Register now...
+                </h1>
+            </div>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <div class="messages">
+                {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+
+            <form id="form" action="/registerPA" method="post" enctype="multipart/form-data">
+                <h1>Register</h1>
+
+                <div class="input-control">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="Enter your email" required
+                        aria-label="Enter your email">
+                    <small class="form-text text-muted">e.g., example@domain.com</small>
+                    <div class="error"></div>
+                </div>
+
+                <div class="input-control">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" placeholder="Password" required
+                        aria-label="Enter your password">
+                    <small class="form-text text-muted">At least 8 characters, with a mix of letters and
+                        numbers.</small>
+                    <div class="error"></div>
+                </div>
+
+                <div class="input-control">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input id="confirm_password" name="confirm_password" type="password" placeholder="Confirm Password"
+                        required aria-label="Confirm your password">
+                    <small id="passwordHelp" class="form-text text-danger d-none">Passwords do not match.</small>
+                    <div class="error"></div>
+                </div>
+
+                <div class="input-control">
+                    <label for="SSN">SSN</label>
+                    <input id="SSN" name="SSN" type="text" placeholder="Enter your SSN" required maxlength="14"
+                        aria-label="Enter your Social Security Number">
+                    <small class="form-text text-muted">14 digits only.</small>
+                    <div class="error"></div>
+                </div>
+
+                <div class="input-control">
+                    <label>Name</label>
+                    <div class="name">
+                        <input id="fname" name="fname" type="text" placeholder="First Name" required
+                            aria-label="Enter your first name">
+                        <input id="mname" name="mname" type="text" placeholder="Middle Name" required
+                            aria-label="Enter your middle name">
+                        <input id="lname" name="lname" type="text" placeholder="Last Name" required
+                            aria-label="Enter your last name">
+                    </div>
+                    <div class="error"></div>
+                </div>
+
+                <div class="input-control">
+                    <label for="bdate">Birth Date</label>
+                    <input id="bdate" name="DOB" type="date" required aria-label="Enter your date of birth">
+                    <div class="error"></div>
+                </div>
+
+                <div class="gender">
+                    <div class="form-group">
+                        <label class="form-label">Gender</label>
+                        <br>
+                        <input type="radio" id="male" name="gender" value="M" required>
+                        <label class="form-label" for="male">Male</label>
+
+                        <input type="radio" id="female" name="gender" value="F" required>
+                        <label class="form-label" for="female">Female</label>
+                    </div>
+                    <div class="error"></div>
+                </div>
+
+                <div class="input-control">
+                    <label for="phone">Phone Number</label>
+                    <input id="phone" name="phone" type="tel" placeholder="Phone No." required maxlength="11"
+                        aria-label="Enter your phone number">
+                    <small class="form-text text-muted">11 digits only.</small>
+                    <div class="error"></div>
+                </div>
+
+                <div class="input-control">
+                    <label for="add">Address</label>
+                    <input id="add" name="add" type="text" placeholder="Address" required
+                        aria-label="Enter your address">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <label for="bt">Blood Type</label>
+                    <select id="bt" name="bt" required aria-label="Select your blood type">
+                        <option value="" disabled selected>Select Blood Type</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                    <small class="form-text text-muted">Choose from A+, A-, B+, B-, AB+, AB-, O+, O-</small>
+                    <div class="error"></div>
+                </div>
+
+                {# <div class="input-control">#}
+                    {# <label for="bt">Blood Type</label>#}
+                    {# <input id="bt" name="bt" type="text" placeholder="Blood Type (e.g., A+)" required maxlength="3"
+                        #} {# aria-label="Enter your blood type">#}
+                    {# <small class="form-text text-muted">A+,A-,B+,B-,AB+,AB-,O+,O-</small>#}
+                    {# <div class="error"></div>#}
+                    {# </div>#}
+
+                <div class="input-control">
+                    <label for="mh">Medical History</label>
+                    <textarea id="mh" name="mh" placeholder="Briefly describe your medical history" required
+                        aria-label="Enter your medical history"></textarea>
+                    <div class="error"></div>
+                </div>
+
+
+
+                <button class="btn btn-primary" type="submit" href="{{ url_for('login_pa') }}">Register</button>
+                <p class="text-center">Already have an account? <a href="{{ url_for('login_pa') }}">Log In</a></p>
+            </form>
+
+        </div>
+    </section>
+    <script>
+        const form = document.getElementById("form");
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+        const fname = document.getElementById("fname");
+        const mname = document.getElementById("mname");
+        const lname = document.getElementById("lname");
+        const bdate = document.getElementById("bdate");
+        const phone = document.getElementById("phone");
+        const address = document.getElementById("add");
+        const blood = document.getElementById("bt");
+        const history = document.getElementById("mh");
+
+
+        const setError = (element, message) => {
+            const inputControl = element.parentElement;
+            const errorDisplay = inputControl.querySelector(".error");
+
+            errorDisplay.innerText = message;
+            inputControl.classList.add("error");
+            inputControl.classList.remove("success");
+        };
+
+        const setSuccess = (element) => {
+            const inputControl = element.parentElement;
+            const errorDisplay = inputControl.querySelector(".error");
+
+            errorDisplay.innerText = "";
+            inputControl.classList.add("success");
+            inputControl.classList.remove("error");
+        };
+
+        const isValidEmail = (email) => {
+            const re =
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        };
+
+        const validateInputs = () => {
+            let isFormValid = true;
+
+            const emailValue = email.value.trim();
+            const passwordValue = password.value.trim();
+            const fnameValue = fname.value.trim();
+            const mnameValue = mname.value.trim();
+            const lnameValue = lname.value.trim();
+            const bdateValue = bdate.value.trim();
+            const phoneValue = phone.value.trim();
+            const addValue = address.value.trim();
+            const bloodValue = blood.value.trim();
+            const historyValue = history.value.trim();
+
+            // Email validation
+            if (emailValue === "") {
+                setError(email, "Email is required");
+                isFormValid = false;
+            } else if (!isValidEmail(emailValue)) {
+                setError(email, "Provide a valid email address");
+                isFormValid = false;
+            } else {
+                setSuccess(email);
+            }
+
+            // Password validation
+
+            if (passwordValue === "") {
+                setError(password, "Password is required");
+                isFormValid = false;
+            } else if (passwordValue.length < 8) {
+                setError(password, "Password must be at least 8 characters");
+                isFormValid = false;
+            } else {
+                setSuccess(password);
+            }
+
+            // First name validation
+            if (fnameValue === "") {
+                setError(fname, "First name is required");
+                isFormValid = false;
+            } else {
+                setSuccess(fname);
+            }
+
+            // Middle name validation
+            if (mnameValue === "") {
+                setError(mname, "Middle name is required");
+                isFormValid = false;
+            } else {
+                setSuccess(mname);
+            }
+
+            // Last name validation
+            if (lnameValue === "") {
+                setError(lname, "Last name is required");
+                isFormValid = false;
+            } else {
+                setSuccess(lname);
+            }
+
+            // Birth date validation
+            if (bdateValue === "") {
+                setError(bdate, "Birth date is required");
+                isFormValid = false;
+            } else {
+                setSuccess(bdate);
+            }
+
+            // Phone validation
+            if (phoneValue === "") {
+                setError(phone, "Phone number is required");
+                isFormValid = false;
+            } else if (!/^\d{11}$/.test(phoneValue)) {
+                setError(phone, "Phone number must be exactly 11 digits");
+                isFormValid = false;
+            } else {
+                setSuccess(phone);
+            }
+
+
+            // Blood type validation
+            if (bloodValue === "") {
+                setError(blood, "Blood type is required");
+                isFormValid = false;
+            } else {
+                setSuccess(blood);
+            }
+
+            // Address validation
+            if (addValue === "") {
+                setError(address, "Address is required");
+                isFormValid = false;
+            } else {
+                setSuccess(address);
+            }
+
+            // Medical history validation
+            if (historyValue === "") {
+                setError(history, "Medical history is required");
+                isFormValid = false;
+            } else {
+                setSuccess(history);
+            }
+
+            return isFormValid;
+        };
+
+    </script>
+
+</body>
+
+</html>

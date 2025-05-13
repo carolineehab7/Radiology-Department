@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
+
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='x-ray.css') }}"> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="{{ url_for('static', filename='x-ray.js') }}"></script> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='x-ray.css') }}">
+    <script src="{{url_for('static', filename='x-ray.js')}}"></script>
+
+    <title>Digital X-ray</title>
+</head>
+
+<body>
+
+    <nav>
+        <div>
+            <a href="{{url_for('index')}}"><img src="{{ url_for('static', filename='images/Final Logo.png') }}"
+                    alt="Logo" class="logo"></a>
+        </div>
+
+        <div>
+            <input type="checkbox" title="Menu" id="CheckedBtn">
+
+
+            <label for="CheckedBtn">
+                <i class='bx bx-menu' id="BurgerIcon"></i>
+                <i class="bi bi-x" id="closeicon"></i>
+            </label>
+            <ul>
+                <li>
+                    <a href="#">Diagnostic Radiology <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="{{ url_for('mri') }}">MRI</a></li>
+                        <li><a href="{{ url_for('ct') }}">CT SCAN</a></li>
+                        <li><a href="{{ url_for('US') }}">ULTRASOUND</a></li>
+                        <li><a href="{{ url_for('x_ray') }}">DIGITAL X-RAY</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Interventional Radiology <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="#">What is Interventional Radiology?</a></li>
+                        <li><a href="#">Treated Cases at NOVA RAD</a></li>
+                        <li><a href="#">Why Choose NOVA RAD?</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Theranostics <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="#">Introduction to Theranostics</a></li>
+                        <li><a href="#">THERANOSTICS in Prostate Cancer</a></li>
+                        <li><a href="#">THERANOSTICS in Neuroendocrine Tumors</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{url_for('founders')}}">Meet Our Founders</a></li>
+                <li>
+                    <a href="{{url_for('login_pa')}}">Log In</a>
+                </li>
+                <li><a href="{{ url_for('register_pa')}}">Sign Up </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class=" banner">
+        <div class="overlay">
+            <h1>DIGITAL X-RAY</h1>
+        </div>
+    </div>
+    <div class="container mt-4">
+
+        <p>
+            X-ray is a type of invisible light with high energy that can partially travel through the patient’s
+            body.
+            Some parts of the body block X-ray more than others. The bone blocks most amount of the rays (if there
+            is
+            metal or contrast material in the body, it will block even more) and air blocks the least. By taking a
+            “picture” of the body with X-ray, a shadow is created, and that shadow is interpreted by a radiologist.
+            When
+            your doctor is asking you to get an X-ray, it usually means that you get a “picture” taken of the area
+            where
+            he or she is concerned where there may be an abnormality.
+        </p>
+        <!-- Accordion -->
+        <div class="accordion mt-4" id="ultrasoundAccordion">
+
+            <!-- Why is it used? -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingWhy">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseWhy" aria-expanded="true" aria-controls="collapseWhy">
+                        WHY IS IT USED?
+                    </button>
+                </h2>
+                <div id="collapseWhy" class="accordion-collapse collapse show" aria-labelledby="headingWhy"
+                    data-bs-parent="#ultrasoundAccordion">
+                    <div class="accordion-body">
+                        <p>X-rays are used for a variety of diagnoses, including discovering the cause of
+                            unexplained
+                            pain
+                            or
+                            other
+                            symptoms of injury or disease. Conditions often diagnosed through the use of X-rays
+                            include:
+                        </p>
+
+                        <ul>
+                            <li>Cancer</li>
+                            <li>Bone injuries and disorders such as arthritis or osteoporosis</li>
+                            <li>Tooth decay</li>
+                            <li>Problems affecting the digestive tract</li>
+                            <li>Infections</li>
+                        </ul>
+
+                        <p>If further testing is required, X-rays may be followed up with other diagnostic imaging
+                            techniques,
+                            such
+                            as MRI, PET, CT scans or ultrasound.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What can I expect? -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingExpect">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExpect" aria-expanded="false" aria-controls="collapseExpect">
+                        WHAT CAN I EXPECT?
+                    </button>
+                </h2>
+                <div id="collapseExpect" class="accordion-collapse collapse" aria-labelledby="headingExpect"
+                    data-bs-parent="#ultrasoundAccordion">
+                    <div class="accordion-body">
+                        <p>Depending on the purpose of the X-ray, it can last anywhere from a few minutes to an
+                            hour.
+                            During
+                            the
+                            X-ray procedure, the patient will be properly positioned under the X-ray machine to
+                            ensure
+                            accurate
+                            imaging of the affected area. This process may be repeated for additional views of
+                            region
+                            and
+                            the
+                            patient may be instructed to change positions.</p>
+
+
+                        <p>X-ray equipment emits only a small amount of radiation. The risks of radiation exposure
+                            are,
+                            therefore,
+                            quite limited and the chance that X-rays will cause cell damage or mutation is extremely
+                            low.
+                            Because a
+                            fetus is more susceptible to harm from radiation, pregnant woman must inform their
+                            doctors
+                            before
+                            having
+                            X-rays.</p>
+
+                        <p><b>X-ray Scans with Contrast</b></p>
+                        <p>If contrast material has been administered, patients may experience a feeling of warmth
+                            in
+                            certain
+                            parts
+                            of the body or a metallic taste in the mouth. It is also possible that some patients
+                            will be
+                            allergic to
+                            the contrast dye. Rarely, such a reaction may be severe, but radiologists are prepared
+                            for
+                            such
+                            a
+                            contingency.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How can I prepare? -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingPrepare">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapsePrepare" aria-expanded="false" aria-controls="collapsePrepare">
+                        HOW CAN I PREPARE?
+                    </button>
+                </h2>
+                <div id="collapsePrepare" class="accordion-collapse collapse" aria-labelledby="headingPrepare"
+                    data-bs-parent="#ultrasoundAccordion">
+                    <div class="accordion-body">
+                        <p><b>Plain X-ray:</b></p>
+                        <p>There is no preparation necessary and the patient may resume normal activities
+                            immediately
+                            afterwards.
+                        </p>
+                        <p><b>X-ray with Barium Enema:</b></p>
+                        <p>
+                            Before a barium enema exam, you’ll be instructed to empty your colon. Any residue in
+                            your
+                            colon
+                            may
+                            obscure the X-ray images or be mistaken for an abnormality.
+                        </p>
+                        <ol>
+                            <li>
+                                Follow a special diet the day before the exam. Do not eat or drink anything that is
+                                heavy
+                                and
+                                try to
+                                drink only clear liquids, such as water, tea or coffee without milk or cream. Do not
+                                eat
+                                meat/vegetables/dairy products.
+                            </li>
+                            <li>Take a laxative the night before the exam. A laxative, in a pill or liquid form will
+                                help
+                                empty
+                                your
+                                colon.</li>
+
+                            <li>Keep drinking a lot of water till midnight the night before the exam.</li>
+                            <li>Patient should abstain from eating and drinking anything (except water) 6 hours
+                                before
+                                the
+                                procedure.</li>
+                            <li>Ask your doctor about your medications. At least a week before the exam, talk with
+                                your
+                                doctor
+                                about
+                                the medications you normally take, he/she might ask you to stop taking them days or
+                                hours
+                                before
+                                the
+                                exam</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Upload Section -->
+        <div class="mt-5">
+            <h2>Upload Your X-ray</h2>
+            <form id="uploadForm" class="mt-3">
+                <div class="mb-3">
+                    <label for="fileInput" class="form-label">Select X-ray Image (JPG, PNG, JPEG or PDF)</label>
+                    <input type="file" class="form-control" id="fileInput" accept=".jpg,.jpeg,.png,.pdf" required />
+                </div>
+                <button type="submit" class="btn btn-primary">Upload</button>
+            </form>
+            <div id="previewArea" class="mt-3"></div>
+        </div>
+
+
+
+    </div>
+
+    <!--START COPYING FOOTER FROM HERE-->
+    <button id="backToTop" title="Go to top" onclick="topFunction()"> &#11165</button>
+
+    <div class="footer">
+        <!-- <img src="/images/contactus.jpg" alt="contactus" class="full-width-img2" >    -->
+        <h1>RESERVE AN APPOINTMENT OR CONSULT A DOCTOR?</h1>
+        <button class="btn" onclick="location.href='ContactUs.html'">Contact Us</button>
+        <div class="contact-container">
+
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>11 Marghani Street, Heliopolis, Cairo</span>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>HCC, Off 90 St., by MRC Square, New Cairo</span>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>8 Mostafa El-Nahas Street, Nasr City, Cairo</span>
+            </div>
+            <br>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:19773">19773</a>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:contact@example.com">novarad</a>
+            </div>
+        </div>
+    </div>
+    <div class="containerF">
+        <p>© 2023 NovaScan. All rights reserved.</p>
+    </div>
+    <!--STOP HERE-->
+
+
+
+</body>
+
+</html>

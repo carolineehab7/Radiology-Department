@@ -1,0 +1,542 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*Text blow the imgae*/
+.container1 {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ----------- DROPDOWN --------------*/
+/*Dropdown box*/
+.drop {
+  max-width: 1000px;
+  margin: 30px auto;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/*Dropdown title*/
+.drop-header {
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+  cursor: pointer;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.drop-header h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #444;
+  font-weight: 500;
+}
+
+/*dropdown icon*/
+.drop-icon {
+  margin-right: 15px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  transform: rotate(180deg);
+}
+
+.arrow {
+  /*used 2 sides of a square to make an arrow*/
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #666;
+  border-bottom: 2px solid #666;
+  transform: rotate(45deg);
+}
+
+/*Dropdown content*/
+.drop-content {
+  padding: 20px 30px;
+  line-height: 1.6;
+  color: #333;
+  display: none;
+}
+
+.drop.active .drop-icon {
+  transform: rotate(0deg);
+}
+
+.drop.active .drop-content {
+  display: block;
+}
+
+.drop-content ul {
+  padding-left: 20px;
+}
+
+.drop-content li {
+  margin-bottom: 10px;
+}
+
+.full-width-img {
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 380px;
+  width: 100%;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #073368 !important;
+  color: white !important;
+}
+
+.btn-primary {
+  background-color: #073368 !important;
+  border-color: #073368 !important;
+}
+
+#message {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* ----------- Banner--------------*/
+.banner {
+  position: relative;
+  background-image: url("images/MRI.jpg"); /* Use actual path */
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  align-items: flex-end;
+}
+
+
+.overlay {
+  background-color: rgba(219, 216, 216, 0.95);
+  color: #333;
+  padding: 30px 40px;
+  clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
+  width: 60%;
+}
+
+.overlay h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Medium screens */
+@media (max-width: 1024px) {
+  .overlay {
+    width: 70%;
+    padding: 25px 35px;
+  }
+
+  .overlay h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+  .overlay {
+    width: 85%;
+    padding: 20px 30px;
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+  }
+
+  .overlay h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .overlay {
+    width: 95%;
+    padding: 15px 20px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); /* remove angle for clarity */
+  }
+
+  .overlay h1 {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+:root {
+  /* Color Scheme - Updated with Off-White */
+  --main-color: #113151;           /* Navy Blue */
+  --bg-color: #f8f8f8;             /* Off-White (soft white) */
+  --text-color: #333333;           /* Dark Gray */
+  --hover-color: #007bff; 
+  --unique-color:var(--hover-color)         /* Blue */
+  --border-color: #e0e0e0;         /* Light Gray for borders */
+  --dropdown-bg: #ffffff;          /* Added for dropdowns */
+  --bgcolor: #f8f8f8;              /* Added for consistency */
+}
+body, html {
+  overflow: visible; /* Ensure scrolling is not restricted */
+}
+
+
+
+nav {
+  width: 100%;
+  height: 100px;
+  /* Ensure the background color is visible */
+  font-family: var(--mainfont);
+  position: sticky;
+  top: 0;
+  z-index: 5000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+  background-color: #ffffff; 
+}
+.logo{
+    width: 350px;
+    height: 100px;  
+    border-radius: 20px;
+}
+
+nav div {
+  float: left;
+}
+
+nav div select {
+  margin-left: 30px;
+  width: 160px;
+  height: 50px;
+  background-color: #F4EEE5;
+  border-color: #5C707E;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--maincolor);
+}
+
+/* Main Navigation Styling */
+nav div ul {
+  margin-left: 180px;
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+nav div ul > li {
+  position: relative;
+  margin-right: 30px;
+}
+nav div ul> li:hover {
+  color: var(--hover-color);
+}
+nav div ul > li > a {
+  display: block;
+  text-decoration: none;
+  color: var(--maincolor);
+  font-weight: bold;
+  padding: 10px 0;
+  transition: color 0.3s ease;
+}
+
+nav div ul > li > a:hover {
+  color: var(--uniquecolor);
+}
+
+/* Dropdown Menu Styling */
+nav div ul > li > ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--dropdown-bg);
+  min-width: 200px;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 100;
+  padding: 10px 0;
+  margin: 0;
+  display: block;
+}
+
+nav div ul > li:hover > ul {
+  opacity: 1;
+  visibility: visible;
+}
+
+nav div ul > li > ul li {
+  padding: 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+nav div ul > li > ul li:last-child {
+  border-bottom: none;
+}
+
+nav div ul > li > ul a {
+  display: block;
+  padding: 8px 15px;
+  color: #555;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+nav div ul > li > ul a:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+  color: var(--hover-color);
+}
+
+nav div button {
+  margin-left: 30px;
+  width: 192px;
+  height: 61px;
+  border-radius: 22px;
+  background-color: var(--uniquecolor);
+  color: white;
+  border: none;
+  margin-top: -2px;
+}
+
+nav div button:hover {
+  animation: mymove 1s infinite;
+}
+
+@keyframes mymove {
+  from { background-color: #F39F5F; }
+  to { background-color: #385469; }
+}
+
+nav div label #BurgerIcon,
+nav div label #closeicon {
+  color: white;
+  font-size: 2.5em;
+  line-height: 80px;
+  float: left;
+  margin-left: 450px;
+  cursor: pointer;
+  display: none;
+}
+
+#CheckedBtn {
+  display: none;
+}
+
+
+
+@media (max-width: 768px) { 
+  header {
+    display: none;
+  }
+  
+  nav div ul, nav div select, .bi-search, nav div button {
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    top: 180px;
+    z-index: 2000;
+    background-color: var(--bgcolor);
+    border-bottom: 1px solid #5C707E;
+    right: -100%;
+    padding: 0px;
+    margin: 0px;
+    transition: all 1s ease-in-out;
+  }
+
+  nav div ul a li {
+    width: 270px;
+    height: 50px;
+    text-align: center;
+    font-family: var(--mainfont);
+    color: var(--maincolor);
+  } 
+
+  nav div label #BurgerIcon {
+    color: var(--maincolor);
+    font-size: 2.5em;
+    line-height: 80px;
+    float: right;
+    cursor: pointer;
+    display: block;
+  }
+
+  #CheckedBtn:checked ~ ul {
+    right: 0px;
+  }
+
+  #CheckedBtn:checked ~ label #closeicon {
+    display: block;
+    color: var(--maincolor);
+  }
+
+  #CheckedBtn:checked ~ label #BurgerIcon {
+    display: none;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  nav li {
+    height: auto;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  nav li > a {
+    padding: 15px;
+  }
+  
+  nav li ul {
+    position: static;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    display: none;
+  }
+  
+  nav li:hover ul {
+    display: block;
+  }
+
+}
+
+/*START COPING FROM HERE*/
+.containerF{
+  background-color: #073368;
+  color: #ffffff;
+  padding: 5px;
+}
+.containerF p{
+  color: #ffffff;
+  padding-top: 10px;
+  font-size: 15px;
+  font-weight: 500;
+}
+#backToTop {
+    display: inline;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 35px;
+    transition: all .3s ease;
+    z-index: 10001;
+}
+
+#backToTop:hover {
+    background-color: #000000;
+}
+
+.footer {
+background-color: #073368;
+display: block;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+position: relative;
+background-position: center center;
+background-repeat: no-repeat;
+background-size: cover;
+min-height: 380px;
+height: 150px;
+width: 100%;
+height: 100%;
+opacity: 0.78;
+}
+
+.footer h1{
+  color: #ffffff;
+  padding-top: 10px;
+  margin-top: 20px;;
+  font-weight: 500;
+  text-align: center;
+  background-color: #1cc5f9;
+}
+
+.footer button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #74a5e1;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.footer button:hover {
+    background-color: white;
+    color: #000000;
+    text-decoration: solid;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.981);
+}
+.footer span {
+
+  color: white;
+  padding: 10px;
+  margin: 0;
+  font-size: 1rem;
+}
+.contact-container {
+    background-color: #073368;
+    padding: 20px;
+    color: white;
+    display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    align-items: center;
+}
+
+.contact-item {
+
+    display: block;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    white-space: nowrap;
+    padding-left: 35%;
+}
+
+.contact-item i {
+    font-size: 20px;
+    color: white;
+    margin-right: 10px;
+}
+
+.contact-item a, 
+.contact-item span {
+     font-size: 20px;
+    color: rgb(255, 255, 255);
+    margin-right: 10px;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+    color: #1cc5f9;
+}
+.contact-item i {
+    font-size: 20px;
+    font-weight: bolder;
+    color: black;  /* Changed from white to black */
+    margin-right: 10px;
+}
+/*Stop HERE*/

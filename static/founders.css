@@ -1,0 +1,540 @@
+:root {
+  /* Color Scheme - Updated with Off-White */
+  --main-color: #113151;           /* Navy Blue */
+  --bg-color: #f8f8f8;             /* Off-White (soft white) */
+  --text-color: #333333;           /* Dark Gray */
+  --hover-color: #007bff; 
+  --unique-color:var(--hover-color)         /* Blue */
+  --border-color: #e0e0e0;         /* Light Gray for borders */
+  --dropdown-bg: #ffffff;          /* Added for dropdowns */
+  --bgcolor: #f8f8f8;              /* Added for consistency */
+}
+body, html {
+  overflow: visible; /* Ensure scrolling is not restricted */
+}
+
+header {
+  background-color: var(--bg-color);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+header p,
+header a,
+header .dropdown-toggle {
+  color: var(--main-color);
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.4;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  transition: color 0.2s ease;
+
+}
+
+/* Hover States */
+header p:hover,
+header a:hover,
+header .dropdown-toggle:hover {
+  color: var(--hover-color);
+}
+
+/* Buttons & Dropdown */
+header btn,
+header .dropdown-toggle {
+  background: transparent;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  
+}
+.dropdown-menu-dark{
+    position: absolute;
+    z-index: 1000;
+}
+       
+header .dropdown-toggle:hover {
+  background-color: rgba(0, 31, 63, 0.05);
+}
+
+header .dropdown-menu {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+ 
+}
+/* Right-aligned Links */
+header a {
+  margin-left: auto;
+  padding: 6px 0;
+}
+
+header span a {
+  margin-left: 12px;
+}
+
+nav {
+  width: 100%;
+  height: 100px;
+  /* Ensure the background color is visible */
+  font-family: var(--mainfont);
+  position: sticky;
+  top: 0;
+  z-index: 5000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+  background-color: #ffffff; 
+}
+.logo{
+    width: 350px;
+    height: 100px;  
+    border-radius: 20px;
+}
+
+nav div {
+  float: left;
+}
+
+nav div select {
+  margin-left: 30px;
+  width: 160px;
+  height: 50px;
+  background-color: #F4EEE5;
+  border-color: #5C707E;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--maincolor);
+}
+
+/* Main Navigation Styling */
+nav div ul {
+  margin-left: 180px;
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+nav div ul > li {
+  position: relative;
+  margin-right: 30px;
+}
+nav div ul> li:hover {
+  color: var(--hover-color);
+}
+nav div ul > li > a {
+  display: block;
+  text-decoration: none;
+  color: var(--maincolor);
+  font-weight: bold;
+  padding: 10px 0;
+  transition: color 0.3s ease;
+}
+
+nav div ul > li > a:hover {
+  color: var(--uniquecolor);
+}
+
+/* Dropdown Menu Styling */
+nav div ul > li > ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--dropdown-bg);
+  min-width: 200px;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 100;
+  padding: 10px 0;
+  margin: 0;
+  display: block;
+}
+
+nav div ul > li:hover > ul {
+  opacity: 1;
+  visibility: visible;
+}
+
+nav div ul > li > ul li {
+  padding: 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+nav div ul > li > ul li:last-child {
+  border-bottom: none;
+}
+
+nav div ul > li > ul a {
+  display: block;
+  padding: 8px 15px;
+  color: #555;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+nav div ul > li > ul a:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+  color: var(--hover-color);
+}
+
+nav div button {
+  margin-left: 30px;
+  width: 192px;
+  height: 61px;
+  border-radius: 22px;
+  background-color: var(--uniquecolor);
+  color: white;
+  border: none;
+  margin-top: -2px;
+}
+
+nav div button:hover {
+  animation: mymove 1s infinite;
+}
+
+@keyframes mymove {
+  from { background-color: #F39F5F; }
+  to { background-color: #385469; }
+}
+
+nav div label #BurgerIcon,
+nav div label #closeicon {
+  color: white;
+  font-size: 2.5em;
+  line-height: 80px;
+  float: left;
+  margin-left: 450px;
+  cursor: pointer;
+  display: none;
+}
+
+#CheckedBtn {
+  display: none;
+}
+
+.bi-x {
+  color: #385469;
+  width: 50px;
+  height: 50px;
+}
+/* Add spacing below the slides */
+.heightofslide {
+  margin-bottom: 50px; /* Add space below the slides */
+}
+
+/* Ensure the section starts after the slides */
+section.container {
+  margin-top: 20px; /* Adjust this value as needed */
+  position: relative; /* Ensure it stays in the normal document flow */
+  z-index: 1; /* Ensure it doesn't overlap with the slides */
+}
+.backdev {
+    width: 700px;
+    height: 250px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);   /*Adjust the element's position by half its width and height to achieve perfect centering. */
+    padding: 5px;
+}
+.backdev h1{
+    color: white;
+    font-size: 50px;
+}
+/* Style for the buttons */
+.backdev button {
+  background-color: var(--main-color); /* Navy Blue */
+  color: var(--bg-color); /* Off-White */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.backdev button:hover {
+  background-color: var(--hover-color); /* Blue on hover */
+  color: var(--bg-color); /* Off-White */
+}
+
+@media (max-width: 768px) { 
+  header {
+    display: none;
+  }
+  
+  nav div ul, nav div select, .bi-search, nav div button {
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    top: 180px;
+    z-index: 2000;
+    background-color: var(--bgcolor);
+    border-bottom: 1px solid #5C707E;
+    right: -100%;
+    padding: 0px;
+    margin: 0px;
+    transition: all 1s ease-in-out;
+  }
+
+  nav div ul a li {
+    width: 270px;
+    height: 50px;
+    text-align: center;
+    font-family: var(--mainfont);
+    color: var(--maincolor);
+  } 
+
+  nav div label #BurgerIcon {
+    color: var(--maincolor);
+    font-size: 2.5em;
+    line-height: 80px;
+    float: right;
+    cursor: pointer;
+    display: block;
+  }
+
+  #CheckedBtn:checked ~ ul {
+    right: 0px;
+  }
+
+  #CheckedBtn:checked ~ label #closeicon {
+    display: block;
+    color: var(--maincolor);
+  }
+
+  #CheckedBtn:checked ~ label #BurgerIcon {
+    display: none;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  nav li {
+    height: auto;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  nav li > a {
+    padding: 15px;
+  }
+  
+  nav li ul {
+    position: static;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    display: none;
+  }
+  
+  nav li:hover ul {
+    display: block;
+  }
+  
+  .search-container {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .search-box {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border-top: 1px solid var(--border-color);
+  }
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.service-card {
+  background-color: white;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-card h3 {
+  background-color: #073368;
+  color: white;
+  padding: 10px;
+  margin: 0;
+  font-size: 1rem;
+}
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Working Hours Section */
+.working-hours {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.working-hours .section-title {
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+.working-hours-list .list-group-item {
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+}
+@media (max-width: 768px) { 
+  header {
+    display: none;
+  }
+  
+  nav div ul, nav div select, .bi-search, nav div button {
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    top: 180px;
+    z-index: 2000;
+    background-color: var(--bgcolor);
+    border-bottom: 1px solid #5C707E;
+    right: -100%;
+    padding: 0px;
+    margin: 0px;
+    transition: all 1s ease-in-out;
+  }
+
+  nav div ul a li {
+    width: 270px;
+    height: 50px;
+    text-align: center;
+    font-family: var(--mainfont);
+    color: var(--maincolor);
+  } 
+
+  nav div label #BurgerIcon {
+    color: var(--maincolor);
+    font-size: 2.5em;
+    line-height: 80px;
+    float: right;
+    cursor: pointer;
+    display: block;
+  }
+
+  #CheckedBtn:checked ~ ul {
+    right: 0px;
+  }
+
+  #CheckedBtn:checked ~ label #closeicon {
+    display: block;
+    color: var(--maincolor);
+  }
+
+  #CheckedBtn:checked ~ label #BurgerIcon {
+    display: none;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  nav li {
+    height: auto;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  nav li > a {
+    padding: 15px;
+  }
+  
+  nav li ul {
+    position: static;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    display: none;
+  }
+  
+  nav li:hover ul {
+    display: block;
+  }
+  
+  .search-container {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .search-box {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border-top: 1px solid var(--border-color);
+  }
+}
+.success-box {
+            background-color: #001f3f; /* Dark blue color */
+            color: white;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .success-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .success-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .success-item h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .success-item p {
+            font-size: 18px;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 600px) {
+            .success-items {
+                grid-template-columns: 1fr;
+            }
+        }

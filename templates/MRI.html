@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='MRI.css') }}">
+
+
+    <title>MRI</title>
+</head>
+
+<body>
+
+
+    <nav>
+        <div>
+            <a href="{{url_for('index')}}"><img src="{{ url_for('static', filename='images/Final Logo.png') }}"
+                    alt="Logo" class="logo"></a>
+        </div>
+
+        <div>
+            <input type="checkbox" title="Menu" id="CheckedBtn">
+
+
+            <label for="CheckedBtn">
+                <i class='bx bx-menu' id="BurgerIcon"></i>
+                <i class="bi bi-x" id="closeicon"></i>
+            </label>
+            <ul>
+                <li>
+                    <a href="#">Diagnostic Radiology <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="{{ url_for('mri') }}">MRI</a></li>
+                        <li><a href="{{ url_for('ct') }}">CT SCAN</a></li>
+                        <li><a href="{{ url_for('US') }}">ULTRASOUND</a></li>
+                        <li><a href="{{ url_for('x_ray') }}">DIGITAL X-RAY</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Interventional Radiology <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="#">What is Interventional Radiology?</a></li>
+                        <li><a href="#">Treated Cases at NOVA RAD</a></li>
+                        <li><a href="#">Why Choose NOVA RAD?</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Theranostics <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="#">Introduction to Theranostics</a></li>
+                        <li><a href="#">THERANOSTICS in Prostate Cancer</a></li>
+                        <li><a href="#">THERANOSTICS in Neuroendocrine Tumors</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{url_for('founders')}}">Meet Our Founders</a></li>
+                <li>
+                    <a href="{{url_for('login_pa')}}">Log In</a>
+                </li>
+                <li><a href="{{ url_for('register_pa')}}">Sign Up </a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class=" banner">
+        <div class="overlay">
+            <h1>MRI</h1>
+            <h3>Magnetic Resonance Imaging</h3>
+        </div>
+    </div>
+    <div class="container mt-4">
+
+        <p>
+            Using state-of-the-art technology, MRI creates anatomical images without the use of radiation showing many
+            different body angles and planes. This enables our physicians to quickly and precisely diagnose a wide
+            variety of conditions. It uses radio-waves and magnetic fields to produce clear and detailed images of
+            nearly all the organs in the body. It is a painless and extremely safe procedure because no radiation is
+            used.
+        </p>
+        <!-- Accordion -->
+        <div class="accordion mt-4" id="ultrasoundAccordion">
+
+            <!-- Why is it used? -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingWhy">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseWhy" aria-expanded="true" aria-controls="collapseWhy">
+                        WHY IS IT USED?
+                    </button>
+                </h2>
+                <div id="collapseWhy" class="accordion-collapse collapse show" aria-labelledby="headingWhy"
+                    data-bs-parent="#ultrasoundAccordion">
+                    <div class="accordion-body">
+                        <p>MRI especially excels in showing bone images and soft tissue organ abnormalities. MRI can
+                            “look inside” a body to identify and locate abnormalities, producing images that can be
+                            detect tumors, infection, cancer, musculoskeletal injury and male and female reproductive
+                            systems.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What can I expect? -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingExpect">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExpect" aria-expanded="false" aria-controls="collapseExpect">
+                        WHAT CAN I EXPECT?
+                    </button>
+                </h2>
+                <div id="collapseExpect" class="accordion-collapse collapse" aria-labelledby="headingExpect"
+                    data-bs-parent="#ultrasoundAccordion">
+                    <div class="accordion-body">
+                        <p>Most patients are comfortable and relaxed during the procedure. Some even fall asleep. People
+                            with claustrophobia may feel uncomfortable in a traditional or “closed” MRI unit because
+                            they must lie still inside a narrow tunnel within the scanning magnet. Sedatives may be
+                            given for patients who experience difficulty in the confined space. We also feature newer
+                            “open” MRI units in our sister company “Misr Scan” that do not enclose the patient to
+                            alleviate this problem. However, “closed” units provide more accurate results and that’s why
+                            in some cases, “open” units cannot be used.</p>
+
+
+                        <p>During the examination, you will be asked to rest motionless on a padded table for 30 to 90
+                            minutes depending on the area of your body being scanned. The anatomic area of interest will
+                            be positioned in the centre of the magnet.</p>
+
+                        <p><b>X-ray Scans with Contrast</b></p>
+                        <p>If contrast material has been administered, patients may experience a feeling of warmth
+                            in
+                            certain
+                            parts
+                            of the body or a metallic taste in the mouth. It is also possible that some patients
+                            will be
+                            allergic to
+                            the contrast dye. Rarely, such a reaction may be severe, but radiologists are prepared
+                            for
+                            such
+                            a
+                            contingency.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How can I prepare? -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingPrepare">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapsePrepare" aria-expanded="false" aria-controls="collapsePrepare">
+                        HOW CAN I PREPARE?
+                    </button>
+                </h2>
+                <div id="collapsePrepare" class="accordion-collapse collapse" aria-labelledby="headingPrepare"
+                    data-bs-parent="#ultrasoundAccordion">
+                    <div class="accordion-body">
+                        <p>There is generally no special preparation required prior to the examination.
+                        </p>
+
+                        <ol>
+                            <li>
+                                Patients can continue to take all medication and follow their regular diet unless
+                                instructed otherwise.
+                            </li>
+                            <li>Prior to entering the scan room, the patient will be instructed to remove all metal
+                                objects from their body. Credit cards and ATM cards must not be brought into the scan
+                                room, as the magnet will erase the magnetic codes on the cards. Patients with metallic
+                                or electronic implants, pacemakers or aneurysm clips should alert the technician prior
+                                to entering the scan room as the MRI may adversely affect these items.</li>
+                        </ol>
+                        <p><b>Safety Note:</b></p>
+                        <p>Women who are pregnant are typically advised to not undergo an MRI procedure.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- How can I prepare? -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingPrepare">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapsePrepare" aria-expanded="false" aria-controls="collapsePrepare">
+                        HAT ARE THE CONTRAST-BASED MRI SCANS?
+                    </button>
+                </h2>
+                <div id="collapsePrepare" class="accordion-collapse collapse" aria-labelledby="headingPrepare"
+                    data-bs-parent="#ultrasoundAccordion">
+                    <div class="accordion-body">
+                        <p>Some MRI examinations require the use of a non-iodine containing injectable contrast material
+                            to increase the sensitivity of the examination and achieve additional information. The
+                            contrast material is injected into a vein using a very small needle. The decision to use the
+                            contrast material will be made by the referring physician and/or radiologist. Some of the
+                            more common reasons for injection of contrast include:
+                        </p>
+                        <ol>
+                            <li>assessing for recurrent disc herniation after surgery </li>
+                            <li>assessing for infection or inflammation</li>
+                            <li>assessing for spinal masses.</li>
+
+                        </ol>
+                        <p>It is always preferrable to eat light meals or do not eat for several hours before the test
+                            since it would be uncomfortable to go through the examination on a full stomach as contrast
+                            material rarely can cause nausea.</p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Upload Section -->
+        <div class="mt-5">
+            <h2>Upload Your MRI</h2>
+            <form id="uploadForm" class="mt-3">
+                <div class="mb-3">
+                    <label for="fileInput" class="form-label">Select MRI Image (JPG, PNG, JPEG or PDF)</label>
+                    <input type="file" class="form-control" id="fileInput" accept=".jpg,.jpeg,.png,.pdf" required />
+                </div>
+                <button type="submit" class="btn btn-primary">Upload</button>
+            </form>
+            <div id="previewArea" class="mt-3"></div>
+        </div>
+
+    </div>
+
+    <!--START COPYING FOOTER FROM HERE-->
+    <button id="backToTop" title="Go to top" onclick="topFunction()"> &#11165</button>
+
+    <div class="footer">
+        <!-- <img src="/images/contactus.jpg" alt="contactus" class="full-width-img2" >    -->
+        <h1>RESERVE AN APPOINTMENT OR CONSULT A DOCTOR?</h1>
+        <button class="btn" onclick="location.href='ContactUs.html'">Contact Us</button>
+        <div class="contact-container">
+
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>11 Marghani Street, Heliopolis, Cairo</span>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>HCC, Off 90 St., by MRC Square, New Cairo</span>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>8 Mostafa El-Nahas Street, Nasr City, Cairo</span>
+            </div>
+            <br>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:19773">19773</a>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:contact@example.com">novarad</a>
+            </div>
+        </div>
+    </div>
+    <div class="containerF">
+        <p>© 2023 NovaScan. All rights reserved.</p>
+    </div>
+    <!--STOP HERE-->
+
+
+
+    <script src="{{url_for('static', filename='MRI.js')}}"></script>
+
+</body>
+
+</html>
