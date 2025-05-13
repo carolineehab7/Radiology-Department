@@ -54,23 +54,24 @@ This project is a comprehensive digital health platform for a radiology departme
 
 ## 📁 Folder Structure
 Final Project/
-├── app.py # Main Flask application
-├── static/ # Static files (CSS, JS, images)
-│ ├── images/ # Image assets
-│ ├── homepage.css # CSS for homepage
-│ ├── x-ray.css # CSS for X-ray page
-│ ├── x-ray.js # JavaScript for X-ray page
-│ ├── homepage.js # JavaScript for homepage
-│ └── founders.css # CSS for founders page
-├── templates/ # HTML templates
-│ ├── homepage.html # Homepage template
-│ ├── x-ray.html # X-ray service page
-│ ├── MRI.html # MRI service page
-│ ├── CT.html # CT scan service page
-│ ├── Ultrasound.html # Ultrasound service page
-│ ├── Founders.html # Founders information page
-│ ├── loginPA.html # Patient login page
-│ └── registerPA.html # Patient registration page
+├── app.py                   # Main Flask application
+├── static/                  # Static files (CSS, JS, images)
+│   ├── images/              # Image assets
+│   ├── homepage.css         # CSS for homepage
+│   ├── x-ray.css            # CSS for X-ray page
+│   ├── x-ray.js             # JavaScript for X-ray page
+│   ├── homepage.js          # JavaScript for homepage
+│   └── founders.css         # CSS for founders page
+├── templates/               # HTML templates
+│   ├── homepage.html        # Homepage template
+│   ├── x-ray.html           # X-ray service page
+│   ├── MRI.html             # MRI service page
+│   ├── CT.html              # CT scan service page
+│   ├── Ultrasound.html      # Ultrasound service page
+│   ├── Founders.html        # Founders information page
+│   ├── loginPA.html         # Patient login page
+│   └── registerPA.html      # Patient registration page
+
 
 ---
 
